@@ -50,27 +50,15 @@ const ACCREDIT_CARDS = [
   },
 ]
 
-const CAMPUS_PHOTOS = [
-  {
-    img: 'https://images.pexels.com/photos/1205651/pexels-photo-1205651.jpeg?auto=compress&cs=tinysrgb&w=900',
-    label: 'Graduation Rites',
-    style: { gridColumn: '1 / 2', gridRow: '1 / 3' }
-  },
-  {
-    img: 'https://images.pexels.com/photos/8612990/pexels-photo-8612990.jpeg?auto=compress&cs=tinysrgb&w=600',
-    label: 'Student Leadership',
-    style: { gridColumn: '2 / 3', gridRow: '1 / 2' }
-  },
-  {
-    img: 'https://images.pexels.com/photos/8617984/pexels-photo-8617984.jpeg?auto=compress&cs=tinysrgb&w=600',
-    label: 'Science Competitions',
-    style: { gridColumn: '3 / 4', gridRow: '1 / 2' }
-  },
-  {
-    img: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=900',
-    label: 'Academic Excellence',
-    style: { gridColumn: '2 / 4', gridRow: '2 / 3' }
-  },
+const LICENSE_PASSERS = [
+  { img: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400&q=80', name: 'Maria Santos', course: 'BS Medical Technology', pct: '92.5%', year: 'Batch 2024' },
+  { img: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80', name: 'John Carlo Reyes', course: 'BS Radiologic Technology', pct: '89.0%', year: 'Batch 2024' },
+  { img: 'https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?w=400&q=80', name: 'Ana Gabrielle Cruz', course: 'BS Psychology', pct: '91.3%', year: 'Batch 2024' },
+  { img: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&q=80', name: 'Paolo Mendoza', course: 'BS Medical Technology', pct: '95.8%', year: 'Batch 2024' },
+  { img: 'https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=400&q=80', name: 'Lea Mae Fernandez', course: 'BS Radiologic Technology', pct: '88.5%', year: 'Batch 2023' },
+  { img: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&q=80', name: 'Ramon dela Cruz', course: 'BS Medical Technology', pct: '93.7%', year: 'Batch 2023' },
+  { img: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80', name: 'Christine Villanueva', course: 'BS Psychology', pct: '90.1%', year: 'Batch 2023' },
+  { img: 'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=400&q=80', name: 'Miguel Andres Lim', course: 'BS Radiologic Technology', pct: '87.6%', year: 'Batch 2023' },
 ]
 
 const FAQ_ITEMS = [
@@ -546,50 +534,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CAMPUS LIFE ──────────────────────────────────────────── */}
-      <section style={{ padding: '5rem 0', background: 'white' }}>
+      {/* ── LICENSE PASSERS ──────────────────────────────────────────── */}
+      <section style={{ padding: '5rem 0', background: '#F8F9FA' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>
-          <p style={{ fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: '0.5rem' }}>LIFE AT NEW SINAI</p>
-          <h2 style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', color: '#2C2C2C', margin: 0 }}>More Than Classrooms.</h2>
-          <p style={{ color: '#5A5A5A', fontSize: '1rem', maxWidth: '500px', marginTop: '0.5rem', marginBottom: '2.5rem', lineHeight: 1.7 }}>
-            New Sinai students don&apos;t just study — they compete, create, lead, and grow. Here&apos;s a glimpse of life inside our campus.
-          </p>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1.2fr 1fr 1fr',
-            gridTemplateRows: '260px 260px',
-            gap: '0.875rem'
-          }}>
-            {CAMPUS_PHOTOS.map((photo, i) => (
-              <div
-                key={i}
-                className="campus-item"
-                style={{
-                  position: 'relative',
-                  overflow: 'hidden',
-                  borderRadius: '1rem',
-                  cursor: 'pointer',
-                  ...photo.style,
-                }}
-              >
-                <img
-                  src={photo.img}
-                  alt={photo.label}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                />
-                <div
-                  className="photo-overlay"
-                  style={{
-                    position: 'absolute', inset: 0,
-                    background: 'linear-gradient(to top, rgba(10,40,20,0.85) 0%, rgba(10,40,20,0.2) 50%, transparent 100%)',
-                    display: 'flex', alignItems: 'flex-end', padding: '1.25rem'
-                  }}
-                >
-                  <span style={{
-                    color: 'white', fontWeight: 700, fontSize: '0.95rem',
-                    fontFamily: "'Oswald', sans-serif", letterSpacing: '0.05em',
-                    textTransform: 'uppercase'
-                  }}>{photo.label}</span>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <p style={{ fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: '0.5rem' }}>BOARD EXAM EXCELLENCE</p>
+            <h2 style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', color: '#2C2C2C', margin: 0 }}>Our License Passers.</h2>
+            <p style={{ color: '#5A5A5A', fontSize: '1rem', maxWidth: '500px', margin: '0.75rem auto 0', lineHeight: 1.7 }}>
+              New Sinai consistently produces top board exam passers in Medical Technology, Radiologic Technology, and Psychology.
+            </p>
+          </div>
+          <style>{`
+            .passer-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.07); transition: transform 220ms, box-shadow 220ms; }
+            .passer-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(30,107,69,0.15); }
+            .passer-photo { width: 100%; height: 200px; object-fit: cover; object-position: center top; display: block; }
+            .passer-badge { display: inline-flex; align-items: center; gap: 0.3rem; background: #1E6B45; color: white; font-size: 0.7rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 9999px; letter-spacing: 0.04em; }
+          `}</style>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.25rem' }}>
+            {LICENSE_PASSERS.map((p, i) => (
+              <div key={i} className="passer-card">
+                <img src={p.img} alt={p.name} className="passer-photo" />
+                <div style={{ padding: '1rem 1.1rem 1.25rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                    <span style={{ fontSize: '0.68rem', color: '#9CA3AF', fontWeight: 500 }}>{p.year}</span>
+                    <span className="passer-badge">✓ Licensed</span>
+                  </div>
+                  <div style={{ fontWeight: 800, fontSize: '0.95rem', color: '#1A202C', marginBottom: '0.2rem', lineHeight: 1.3 }}>{p.name}</div>
+                  <div style={{ fontSize: '0.78rem', color: '#4B5563', marginBottom: '0.75rem' }}>{p.course}</div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <div style={{ flex: 1, height: 6, background: '#E5E7EB', borderRadius: 9999, overflow: 'hidden' }}>
+                      <div style={{ width: p.pct, height: '100%', background: 'linear-gradient(90deg, #1E6B45, #2E9E68)', borderRadius: 9999 }} />
+                    </div>
+                    <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#1E6B45', flexShrink: 0 }}>{p.pct}</span>
+                  </div>
                 </div>
               </div>
             ))}

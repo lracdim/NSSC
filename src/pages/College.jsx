@@ -17,6 +17,7 @@ const PROGRAMS = [
       'Board exam preparation',
     ],
     badge: 'PRC Accredited',
+    path: '/college/medtech',
   },
   {
     title: 'BS Radiologic Technology',
@@ -32,6 +33,7 @@ const PROGRAMS = [
       'Hospital internships',
     ],
     badge: 'PRC Accredited',
+    path: '/college/radtech',
   },
   {
     title: 'BS Psychology',
@@ -47,6 +49,7 @@ const PROGRAMS = [
       'Graduate school prep',
     ],
     badge: 'CHED Recognized',
+    path: '/college/psychology',
   },
 ]
 
@@ -137,7 +140,7 @@ export default function College() {
                   <h4 style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>
                     Program Highlights
                   </h4>
-                  <ul className="space-y-1.5">
+                  <ul className="space-y-1.5" style={{ marginBottom: '1.25rem' }}>
                     {prog.highlights.map((h, hi) => (
                       <li key={hi} className="flex items-center gap-2" style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
                         <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--accent-gold)', display: 'inline-block', flexShrink: 0 }} />
@@ -145,6 +148,14 @@ export default function College() {
                       </li>
                     ))}
                   </ul>
+                  <div style={{ display: 'flex', gap: '0.625rem', marginTop: 'auto' }}>
+                    <button onClick={() => window.dispatchEvent(new CustomEvent('openEnrollModal'))} style={{ flex: 1, background: 'var(--accent)', color: 'white', border: 'none', borderRadius: '8px', padding: '0.65rem 1rem', fontSize: '0.82rem', fontWeight: 700, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem' }}>
+                      Enroll Now <ArrowRight size={14} />
+                    </button>
+                    <Link to={prog.path} style={{ flex: 1, border: '1.5px solid var(--accent)', color: 'var(--accent)', borderRadius: '8px', padding: '0.65rem 1rem', fontSize: '0.82rem', fontWeight: 600, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', textDecoration: 'none', background: 'transparent' }}>
+                      Learn More
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}

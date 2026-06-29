@@ -17,6 +17,7 @@ const PROGRAMS = [
       'Apply OHS policies in technical environments',
     ],
     careers: ['Automation Technician', 'Maintenance Engineer', 'Equipment Specialist', 'Production Technician'],
+    path: '/tesda/mechatronics',
   },
   {
     title: 'Caregiving NC II',
@@ -32,6 +33,7 @@ const PROGRAMS = [
       'Maintain a safe and clean environment',
     ],
     careers: ['Caregiver (Local)', 'Overseas Caregiver', 'Home Care Aide', 'Elder Care Worker', 'Disability Support Worker'],
+    path: '/tesda/caregiving',
   },
 ]
 
@@ -123,8 +125,16 @@ export default function TESDA() {
                     ))}
                   </ul>
                   <h4 style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>Career Paths</h4>
-                  <div className="flex flex-wrap gap-1.5">
+                  <div className="flex flex-wrap gap-1.5" style={{ marginBottom: '1.25rem' }}>
                     {prog.careers.map(c => <span key={c} className="badge" style={{ fontSize: '0.7rem' }}>{c}</span>)}
+                  </div>
+                  <div style={{ display: 'flex', gap: '0.625rem', marginTop: 'auto' }}>
+                    <button onClick={() => window.dispatchEvent(new CustomEvent('openEnrollModal'))} style={{ flex: 1, background: 'var(--accent)', color: 'white', border: 'none', borderRadius: '8px', padding: '0.65rem 1rem', fontSize: '0.82rem', fontWeight: 700, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem' }}>
+                      Enroll Now <ArrowRight size={14} />
+                    </button>
+                    <Link to={prog.path} style={{ flex: 1, border: '1.5px solid var(--accent)', color: 'var(--accent)', borderRadius: '8px', padding: '0.65rem 1rem', fontSize: '0.82rem', fontWeight: 600, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', textDecoration: 'none', background: 'transparent' }}>
+                      Learn More
+                    </Link>
                   </div>
                 </div>
               </div>

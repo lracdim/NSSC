@@ -120,7 +120,7 @@ export default function Academics() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {LEVELS.map((lvl, i) => (
-              <Link key={i} to={lvl.link || '/academics'} className="card overflow-hidden flex flex-col" style={{ textDecoration: 'none', display: 'flex' }}>
+              <div key={i} className="card overflow-hidden flex flex-col">
                 <div className="h-48 overflow-hidden relative">
                   <img
                     src={lvl.img}
@@ -152,11 +152,16 @@ export default function Academics() {
                       {lvl.programs.map(p => <span key={p} className="badge" style={{ fontSize: '0.7rem' }}>{p}</span>)}
                     </div>
                   )}
-                  <div className="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style={{ color: 'var(--accent)' }}>
-                    {lvl.linkLabel} <ArrowRight size={14} />
+                  <div style={{ display: 'flex', gap: '0.625rem', marginTop: '1.25rem' }}>
+                    <button onClick={() => window.dispatchEvent(new CustomEvent('openEnrollModal'))} style={{ flex: 1, background: 'var(--accent)', color: 'white', border: 'none', borderRadius: '8px', padding: '0.65rem 1rem', fontSize: '0.82rem', fontWeight: 700, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem' }}>
+                      Enroll Now <ArrowRight size={14} />
+                    </button>
+                    <Link to={lvl.link || '/academics'} style={{ flex: 1, border: '1.5px solid var(--accent)', color: 'var(--accent)', borderRadius: '8px', padding: '0.65rem 1rem', fontSize: '0.82rem', fontWeight: 600, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', textDecoration: 'none', background: 'transparent' }}>
+                      Learn More
+                    </Link>
                   </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
