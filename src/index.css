@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #F9FAFB;
+  --surface: #FFFFFF;
+  --surface-2: #F3F4F6;
+  --border: #E5E7EB;
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --text-muted: #9CA3AF;
+  --accent: #1E6B45;
+  --accent-hover: #165934;
+  --accent-dim: rgba(30, 107, 69, 0.06);
+  --accent-gold: #C9A84C;
+  --accent-text: #FFFFFF;
+  --radius: 16px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.04);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.06), 0 4px 10px rgba(0,0,0,0.04);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-primary);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, h5, h6 { font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; border: none; font-family: inherit; }
+input, textarea, select { font-family: inherit; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+@media (max-width: 768px) { .container { padding: 0 1.25rem; } }
+
+.page { min-height: 100vh; padding-top: 80px; }
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: var(--accent); color: var(--accent-text);
+  font-weight: 600; font-size: 0.95rem;
+  border-radius: 999px; transition: all 0.2s ease; white-space: nowrap;
+}
+.btn-primary:hover {
+  background: var(--accent-hover); transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(30,107,69,0.25);
+}
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: transparent; color: var(--accent);
+  font-weight: 600; font-size: 0.95rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--accent); transition: all 0.2s ease; white-space: nowrap;
+}
+.btn-secondary:hover { background: var(--accent); color: #fff; }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background: transparent; color: var(--text-secondary);
+  font-weight: 500; font-size: 0.875rem;
+  border-radius: 10px; transition: all 0.2s ease;
+}
+.btn-ghost:hover { background: var(--accent-dim); color: var(--accent); }
+
+.badge {
+  display: inline-flex; align-items: center;
+  padding: 0.2rem 0.7rem;
+  background: var(--accent-dim); color: var(--accent);
+  font-size: 0.75rem; font-weight: 500;
+  border-radius: 999px;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 0.6rem;
+}
+
+.page-hero { padding: 5rem 0 4rem; text-align: center; }
+.page-hero h1 { font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 800; margin-bottom: 1rem; }
+.page-hero .lead {
+  font-size: 1.1rem; color: var(--text-secondary);
+  max-width: 600px; margin: 0 auto; line-height: 1.75;
+}
+
+.input-field {
+  width: 100%; padding: 0.8rem 1rem;
+  border: 1.5px solid var(--border); border-radius: 10px;
+  font-family: inherit; font-size: 0.95rem;
+  background: var(--surface); color: var(--text-primary);
+  transition: border-color 0.2s; outline: none;
+}
+.input-field:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(30,107,69,0.08); }
+textarea.input-field { resize: vertical; min-height: 120px; }
+
+@media (max-width: 480px) {
+  .page-hero { padding: 3rem 0 2.5rem; }
+  .btn-primary, .btn-secondary { padding: 0.75rem 1.5rem; font-size: 0.9rem; }
+}
+
+@keyframes bounce-down {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+@keyframes scroll-line {
+  0% { height: 0; opacity: 0; }
+  50% { height: 48px; opacity: 1; }
+  100% { height: 48px; opacity: 0; }
+}
